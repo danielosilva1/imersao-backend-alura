@@ -76,6 +76,8 @@ Por exemplo, o JSON poderia ser assim:
 }
 ```
 
+💡 Veja a solução do exercício <a href="server.js">aqui</a>.
+
 <br></br>
 ## 📚 CONTEÚDO EXTRA
 **Hoisting: variáveis elevadas/içadas**
