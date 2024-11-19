@@ -51,3 +51,5 @@ No código acima, ':id' indica que, após a segunda barra, será informado um da
 1. Crie uma nova rota chamada /posts/:id que retorne um post específico com base no ID fornecido na URL.
 2. Além de retornar o post, adicione uma funcionalidade que, se o ID não existir, retorne uma mensagem de erro personalizada, como "Post não encontrado" com o status 404.
 3. Para tornar o exercício mais interessante, adicione um novo campo aos objetos de post, chamado autor, que deve conter o nome do autor do post. Atualize a rota para que ela também retorne o autor junto com a descrição e a imagem.
+
+💡 Veja a solução do exercício <a href="server.js">aqui</a>.
