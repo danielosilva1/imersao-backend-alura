@@ -1,38 +1,39 @@
 import express from "express";
 
+const posts = [
+    {
+        descricao: "Uma foto teste",
+        imagem: "https://placecats.com/millie/300/150"
+    },
+    {
+        descricao: "Gato fazendo yoga",
+        imagem: "https://placecats.com/millie/300/150"
+    },
+    {
+        descricao: "Gatinho dormindo",
+        imagem: "https://placecats.com/millie/300/150"
+    },
+    {
+        descricao: "Gato explorando a caixa",
+        imagem: "https://placecats.com/millie/300/150"
+    },
+    {
+        descricao: "Gato com um brinquedo",
+        imagem: "https://placecats.com/millie/300/150"
+    },
+    {
+        descricao: "Gato olhando pela janela",
+        imagem: "https://placecats.com/millie/300/150"
+    }
+];
+
 const app = express();
+app.use(express.json()); // Possibilita que arquivos em formato JSON sejam tratados como JSON pelo servidor
+
 app.listen(3000, () => {
     console.log("Servidor escutando...");
 });
 
-app.get("/api", (req, res) => {
-    res.status(200).send("A Torre Eiffel iluminada à noite, com milhares de luzes cintilando, criando um espetáculo mágico em Paris.");
-});
-
-/*
-Resolução do exercício proposto pela Luri
-
-Que tal você criar uma nova rota em seu servidor que retorne um JSON com informações sobre um livro?
-1. Crie uma nova rota chamada /livro.
-2. Quando essa rota for acessada, ela deve retornar um JSON com as seguintes informações:
-    Título do livro
-    Autor
-    Ano de publicação
-    Gênero
-Por exemplo, o JSON poderia ser assim:
-{
-    "titulo": "O Senhor dos Anéis",
-    "autor": "J.R.R. Tolkien",
-    "ano": 1954,
-    "genero": "Fantasia"
-}
-*/
-
-app.get("/livro", (req, res) => {
-    res.status(200).send({
-        titulo: "O Senhor dos Anéis",
-        autor: "J.R.R. Tolkien",
-        ano: 1954,
-        genero: "Fantasia"
-    });
+app.get("/posts", (req, res) => {
+    res.status(200).json(posts);
 });

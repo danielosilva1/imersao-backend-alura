@@ -14,4 +14,20 @@ Nesta aula, iremos criar uma base de dados e um mock, com ajuda do Gemini, além
 <br></br>
 ## 📝 Anotações
 
+## Código HTTP
+Série de códigos numéricos associado a um texto que indica, basicamente, tudo o que pode acontecer com a conexão entre cliente e servidor.
+
+💡 O código 200, que usamos como status de resposta da rota '/api' criada na aula 01, indica que a requisição foi enviada, recebida e retornou uma resposta com sucesso.
+
+Todos os códigos de status podem ser acessados <a href="https://http.cat/">aqui</a>.
+
+## Fazer com que servidor atualize automaticamente após alteraçõs
+No diretório do projeto:
+```
+node --watch server.js
+```
+
+## API (*Application Programming Interface*)
+Funciona como uma interface entre dois serviços. No caso da solução que está sendo construída nesta aula, ela está interfaciando o backend (dados) com o frontend (visualização do arquivo JSON via navegador).
+
 <br></br>
