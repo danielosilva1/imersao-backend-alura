@@ -30,4 +30,13 @@ node --watch server.js
 ## API (*Application Programming Interface*)
 Funciona como uma interface entre dois serviços. No caso da solução que está sendo construída nesta aula, ela está interfaciando o backend (dados) com o frontend (visualização do arquivo JSON via navegador).
 
+## Enviando e recebendo um parâmetro via rota
+```javascript
+app.get("/posts/:id", (req, res) => {
+    const index = buscarPostPorID(req.params.id);
+    res.status(200).json(posts[index]);
+});
+```
+No código acima, ':id' indica que, após a segunda barra, será informado um dado variável que será identificado por id (e que pode ser recuperado usando req.params.id).
+
 <br></br>
