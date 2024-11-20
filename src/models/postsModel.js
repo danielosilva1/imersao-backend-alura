@@ -10,6 +10,8 @@ export async function getTodosPosts() {
 
 // Resolução do exercício sugerido pela Luri
 export async function criarNovoPost(post) {
-    // TODO: inserir dados no mongoDB
-    console.log("post:\n", post);
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts");
+
+    await colecao.insertOne(post);    
 }
