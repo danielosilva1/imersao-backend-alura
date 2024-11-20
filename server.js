@@ -44,22 +44,3 @@ app.get("/posts/:id", (req, res) => {
     const index = buscarPostPorID(req.params.id);
     res.status(200).json(posts[index]);
 });
-
-/*
-Resolução do exercício proposto pela Luri
-
-Que tal criar uma nova rota na sua aplicação que retorne apenas um post específico, mas com uma diferença interessante?
-1. Crie uma nova rota chamada /posts/:id que retorne um post específico com base no ID fornecido na URL.
-2. Além de retornar o post, adicione uma funcionalidade que, se o ID não existir, retorne uma mensagem de erro personalizada, como "Post não encontrado" com o status 404.
-3. Para tornar o exercício mais interessante, adicione um novo campo aos objetos de post, chamado autor, que deve conter o nome do autor do post. Atualize a rota para que ela também retorne o autor junto com a descrição e a imagem.
-*/
-
-app.get("/posts/luri/:id", (req, res) => {
-    const index = buscarPostPorID(req.params.id);
-    
-    if (index == -1) {
-        res.status(404).send("Post não encontrado");
-    } else {
-        res.status(200).json(posts[index]);
-    }
-});
