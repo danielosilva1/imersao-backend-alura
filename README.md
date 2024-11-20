@@ -43,3 +43,22 @@ As aplicações têm 3 partes (responsabilidades) principais:
 3. Conexão do banco de dados com aplicação (onde a manipulação e validação dos dados é executada - model).
 
 💡 O projeto deve ser estruturado com base nessas 3 responsabilidades.
+
+<br></br>
+## 🎯 Exercício sugerido pela Luri ao final da aula
+**Aqui está um exercício que você pode realizar para praticar os conceitos aprendidos na terceira aula:**
+
+1. Crie uma nova rota: No arquivo postRoutes.js, adicione uma nova rota que permita inserir um novo post no banco de dados. A rota deve ser um método POST e deve receber os dados do post no corpo da requisição.
+
+2. Crie um controlador: No arquivo postsController.js, crie uma função chamada criarPost que será responsável por inserir um novo post no banco de dados. Essa função deve:
+    - Receber os dados do post a partir do corpo da requisição.
+    - Utilizar a função insertOne() do MongoDB para inserir o novo post na coleção posts.
+    - Retornar uma resposta com o status 201 (Created) e o post inserido.
+
+3. Atualize a rota: Na nova rota que você criou, chame a função criarPost do controlador para que ela seja executada quando a rota for acessada.
+
+4. Teste a nova funcionalidade: Utilize uma ferramenta como Postman ou Insomnia para enviar uma requisição POST para a nova rota que você criou, incluindo os dados do post no corpo da requisição. Verifique se o post é inserido corretamente no banco de dados.
+
+**Dicas:**
+- Lembre-se de validar os dados recebidos antes de tentar inseri-los no banco.
+- Você pode usar console.log para depurar e verificar se os dados estão sendo recebidos corretamente.
