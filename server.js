@@ -1,25 +1,7 @@
 import express from "express";
+import conectarAoBanco from "./src/config/dbConfig.js";
 
-const posts = [
-    {
-        id: 1,
-        descricao: "Uma foto teste",
-        imagem: "https://placecats.com/millie/300/150",
-        autor: "gui_lima"
-    },
-    {
-        id: 2,
-        descricao: "Gato fazendo yoga",
-        imagem: "https://placecats.com/millie/300/150",
-        autor: "ju_amoasei"
-    },
-    {
-        id: 3,
-        descricao: "Gato fazendo panqueca",
-        imagem: "https://placecats.com/millie/300/150",
-        autor: "andre_david"
-    }
-];
+await conectarAoBanco(process.env.STRING_CONEXAO);
 
 const app = express();
 app.use(express.json()); // Possibilita que arquivos em formato JSON sejam tratados como JSON pelo servidor
