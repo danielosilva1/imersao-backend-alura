@@ -20,16 +20,3 @@ app.get("/posts", async (req, res) => {
 
     res.status(200).json(posts);
 });
-
-// function buscarPostPorID(id) {
-//     // Retorna o índice do post cujo id é o buscado
-//     // Documentação: função findIndex retorna -1 se nenhum elemento do array satisfaz a condição
-//     return posts.findIndex((post) => {
-//         return post.id === Number(id);
-//     });
-// }
-
-// app.get("/posts/:id", (req, res) => {
-//     const index = buscarPostPorID(req.params.id);
-//     res.status(200).json(posts[index]);
-// });
