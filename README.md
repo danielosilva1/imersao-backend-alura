@@ -64,4 +64,4 @@ As aplicações têm 3 partes (responsabilidades) principais:
 - Você pode usar console.log para depurar e verificar se os dados estão sendo recebidos corretamente.
 
 💡 Veja a solução do exercício abaixo:<br></br>
-<video width="640" height="360" controls> <source src="resposta-exercicio-luri/resposta-exercicio-aula03.mp4" type="video/mp4"> Seu navegador não suporta o elemento de vídeo.
+![alt text](resposta-exercicio-luri/resposta-exercicio-aula03.gif)
