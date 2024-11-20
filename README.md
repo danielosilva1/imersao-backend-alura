@@ -31,4 +31,15 @@ O script acima coloca o servidor de pé, faz com que ele seja recarregado automa
 - *async*: transforma uma função em uma função assíncrona que retorna uma *Promise*;
 - *await*: pausa a execução de uma função assíncrona até que uma *Promise* seja resolvida.
 
-<br></br>
+## Estruturando projeto
+Criar estrutura de pastas adequada é importante para o projeto, pois permite:
+1. Separar responsabilidades;
+2. Melhorar legibilidade do código;
+3. Melhora manutenção e evolução (adição ou correção de funcionalidades).
+
+As aplicações têm 3 partes (responsabilidades) principais:
+1. Rota (onde as rotas são criadas - routes);
+2. Manipulação das rotas (onde o comportamento das rotas, e. g. tipo de requisição e o retorno, é definido - controller);
+3. Conexão do banco de dados com aplicação (onde a manipulação e validação dos dados é executada - model).
+
+💡 O projeto deve ser estruturado com base nessas 3 responsabilidades.
