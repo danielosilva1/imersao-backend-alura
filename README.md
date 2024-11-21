@@ -12,6 +12,9 @@ Nesta aula, vamos implementar o upload das imagens no projeto, além de testar a
 
 <br></br>
 ## 📝 Anotações
+## Thunder Client
+Extensão que permite enviar requisições pelo VS Code.
 
+💡 Funciona de forma semelhante ao Postman, mas diretamente no VS Code.
 
 <br></br>
