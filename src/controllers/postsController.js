@@ -44,7 +44,10 @@ export async function atualizarNovoPost(req, res) {
     try {
         // Buffer necessário para uso na API do gemini
         const imageBuffer = fs.readFileSync(`uploads/${idPost}.png`);
-        const descricao = await gerarDescricaoComGemini(imageBuffer);
+        let descricao = await gerarDescricaoComGemini(imageBuffer);
+        descricao = descricao.replace(/^Aqui está uma descrição em português do Brasil para a imagem:/, '');
+        descricao = descricao.replace(/\n/g, "");
+
         const novosDados = {
             imgUrl: urlImagem,
             descricao: descricao,
@@ -53,7 +56,7 @@ export async function atualizarNovoPost(req, res) {
 
         const postAtualizado = await atualizarPost(idPost, novosDados);
         res.status(200).json(postAtualizado);
-    } catch(error) {
+    } catch(erro) {
         console.error(erro.message);
         res.status(500).json({"Erro": "Falha na requisição"});
     }
