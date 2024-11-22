@@ -75,3 +75,13 @@ Aqui estão os passos que você pode seguir:
 4. Retorne uma resposta: Após a atualização, retorne uma resposta ao cliente informando se a atualização foi bem-sucedida e, se possível, retorne o post atualizado.
 
 5. Teste a nova rota: Utilize o Postman ou outra ferramenta de sua escolha para testar a nova rota, enviando uma requisição PUT com os dados que você deseja atualizar.
+
+
+**Para a resolução, a seguinte documentação foi consultada:**
+- Atualizar um post usando updateOne: <a href="https://www.mongodb.com/pt-br/docs/manual/reference/method/db.collection.updateOne/">disponível aqui</a>.
+- Filtrar posts com base em uma condição: <a href="https://www.mongodb.com/pt-br/docs/manual/reference/method/db.collection.find/#examples">disponível aqui</a>.
+
+*Observação: O updateOne não retorna o objeto atualizado. Para fazer isso, usa-se o findOneAndUpdate com a seguinte configuração: { returnDocument: 'after' }.*
+
+💡 Veja a solução do exercício abaixo:<br></br>
+![alt text](resposta-exercicio-luri/resposta-exercicio-aula03.gif)

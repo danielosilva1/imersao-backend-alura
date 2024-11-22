@@ -34,14 +34,15 @@ export async function uploadImagem(req, res) {
     }
 }
 
+// Resposta do exercício proposto pela Luri
 export async function atualizarPost(req, res) {
     const idPost = req.params.id;
     const novosDados = req.body;
 
     try {
-        editarPost(idPost, novosDados);
+        const postAtualizado = editarPost(idPost, novosDados);
 
-        res.status(200).json({"Sucesso": "Post atualizado"});
+        res.status(200).json({Sucesso: "Post atualizado"});
     } catch(error) {
         console.error(erro.message);
         res.status(500).json({"Erro": "Falha na requisição"});

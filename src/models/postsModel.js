@@ -1,4 +1,5 @@
 import conectarAoBanco from "../config/dbConfig.js";
+import { ObjectId } from "mongodb";
 
 const conexao = await conectarAoBanco(process.env.STRING_CONEXAO);
 
@@ -14,8 +15,10 @@ export async function criarPost(novoPost) {
     return colecao.insertOne(novoPost);
 }
 
-// Resposta do desafio proposto pela Luri
+// Resposta do exercício proposto pela Luri
 export async function editarPost(idPost, novosDados) {
-    console.log(idPost);
-    console.log(novosDados);
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts");
+
+    return colecao.updateOne({ _id: new ObjectId(idPost) }, { $set: novosDados });
 }
