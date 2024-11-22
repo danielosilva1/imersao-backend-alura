@@ -17,7 +17,7 @@ Extensão que permite enviar requisições pelo VS Code.
 
 💡 Funciona de forma semelhante ao Postman, mas diretamente no VS Code.
 
-A versão gratuita dessa ferramenta não permite envio de arquivos de mídia. Para isso, utiliza-se o Postman.
+*A versão gratuita dessa ferramenta não permite envio de arquivos de mídia. Para isso, utiliza-se o Postman.*
 
 ## Enviando um arquivo (de imagem ou PDF, por exemplo) na requisição
 1. Ao invés de salvar a imagem no próprio banco, a melhor estratégia é salvá-la em um diretório do próprio servidor e, no banco, armazenar apenas o caminho para ela.
@@ -60,7 +60,7 @@ No código acima, define-se que a requisição de POST acessada pela rota "/uplo
 A instância do multer vai agir no meio, entre a requisição e a chamada da função do model que efetivamente salvará a imagem (uploadImagem). Dessa forma, é conhecido como **middleware**.
 
 <br></br>
-🎯 Exercício sugerido pela Luri ao final da aula
+## 🎯 Exercício sugerido pela Luri ao final da aula
 
 **Que tal fazer um exercício onde você cria uma nova rota para permitir que os usuários possam atualizar um post existente?**
 
