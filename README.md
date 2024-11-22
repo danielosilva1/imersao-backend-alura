@@ -58,3 +58,20 @@ app.post("/upload", upload.single("imagem"), uploadImagem);
 No código acima, define-se que a requisição de POST acessada pela rota "/upload" contém **um único arquivo** (single), cujo identificador é "imagem".
 
 A instância do multer vai agir no meio, entre a requisição e a chamada da função do model que efetivamente salvará a imagem (uploadImagem). Dessa forma, é conhecido como **middleware**.
+
+<br></br>
+🎯 Exercício sugerido pela Luri ao final da aula
+
+**Que tal fazer um exercício onde você cria uma nova rota para permitir que os usuários possam atualizar um post existente?**
+
+Aqui estão os passos que você pode seguir:
+
+1. Crie uma nova rota: Adicione uma rota do tipo PUT que permita atualizar um post. A rota pode ser algo como /posts/:id, onde :id é o identificador do post que você deseja atualizar.
+
+2. Crie a função no controller: No seu controller, crie uma função chamada atualizarPost. Essa função deve receber o id do post e os novos dados que você deseja atualizar (por exemplo, a descrição ou a URL da imagem).
+
+3. Use o método updateOne do MongoDB: Dentro da função atualizarPost, utilize o método updateOne do MongoDB para atualizar o post no banco de dados com os novos dados.
+
+4. Retorne uma resposta: Após a atualização, retorne uma resposta ao cliente informando se a atualização foi bem-sucedida e, se possível, retorne o post atualizado.
+
+5. Teste a nova rota: Utilize o Postman ou outra ferramenta de sua escolha para testar a nova rota, enviando uma requisição PUT com os dados que você deseja atualizar.

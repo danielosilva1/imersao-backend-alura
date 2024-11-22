@@ -13,3 +13,9 @@ export async function criarPost(novoPost) {
     const colecao = db.collection("posts");
     return colecao.insertOne(novoPost);
 }
+
+// Resposta do desafio proposto pela Luri
+export async function editarPost(idPost, novosDados) {
+    console.log(idPost);
+    console.log(novosDados);
+}
