@@ -1,6 +1,12 @@
 import express from "express";
 import multer from "multer";
 import { listarPosts, criarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postsController.js";
+import cors from "cors";
+
+const corsOptions = {
+    origin: "http://localhost:8000", // endereço em que o front está rodando
+    optionsSuccessStatus: 200
+}
 
 // Essa configuração só é necessária em sistemas Windows. Se não colocá-la, o multer vai renomear o arquivo para um nome aleatório.
 const storage = multer.diskStorage({
@@ -19,6 +25,8 @@ const upload = multer({ dest: "./uploads" , storage});
 const routes = (app) => {
     // Permite que o servidor interprete requisições com corpo no formato JSON
     app.use(express.json());
+    app.use(cors(corsOptions));
+    
     // Rota para buscar todos os posts
     app.get("/posts", listarPosts);
     // Rota para criar um post
