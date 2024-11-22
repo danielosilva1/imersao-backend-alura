@@ -1,5 +1,5 @@
 import fs from "fs";
-import {getTodosPosts, criarPost, editarPost } from "../models/postsModel.js";
+import {getTodosPosts, criarPost, atualizarPost } from "../models/postsModel.js";
 
 export async function listarPosts(req, res) {
     const posts = await getTodosPosts();
@@ -34,15 +34,21 @@ export async function uploadImagem(req, res) {
     }
 }
 
-// Resposta do exercício proposto pela Luri
-export async function atualizarPost(req, res) {
+// Atualiza o post recém-criado para adicionar as informações faltantes
+export async function atualizarNovoPost(req, res) {
     const idPost = req.params.id;
-    const novosDados = req.body;
+    // url da imagem pode ser acessa porque a pasta uploads foi servida estaticamente
+    const urlImagem = `http://localhost:3000/${idPost}.png`;
+    const novosDados = {
+        imgUrl: urlImagem,
+        descricao: req.body.descricao,
+        alt: req.body.alt
+    }
 
     try {
-        const postAtualizado = editarPost(idPost, novosDados);
+        const postAtualizado = await atualizarPost(idPost, novosDados);
 
-        res.status(200).json({Sucesso: "Post atualizado"});
+        res.status(200).json(postAtualizado);
     } catch(error) {
         console.error(erro.message);
         res.status(500).json({"Erro": "Falha na requisição"});

@@ -15,10 +15,10 @@ export async function criarPost(novoPost) {
     return colecao.insertOne(novoPost);
 }
 
-// Resposta do exercício proposto pela Luri
-export async function editarPost(idPost, novosDados) {
+export async function atualizarPost(idPost, novosDados) {
     const db = conexao.db("imersao-instabytes");
     const colecao = db.collection("posts");
+    const objectId = ObjectId.createFromHexString(idPost);
 
-    return colecao.updateOne({ _id: new ObjectId(idPost) }, { $set: novosDados });
+    return colecao.updateOne({ _id: new ObjectId(objectId) }, { $set: novosDados });
 }

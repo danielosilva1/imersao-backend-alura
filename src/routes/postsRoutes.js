@@ -1,6 +1,6 @@
 import express from "express";
 import multer from "multer";
-import { listarPosts, criarNovoPost, uploadImagem, atualizarPost } from "../controllers/postsController.js";
+import { listarPosts, criarNovoPost, uploadImagem, atualizarNovoPost } from "../controllers/postsController.js";
 
 // Essa configuração só é necessária em sistemas Windows. Se não colocá-la, o multer vai renomear o arquivo para um nome aleatório.
 const storage = multer.diskStorage({
@@ -25,8 +25,8 @@ const routes = (app) => {
     app.post("/posts", criarNovoPost);
     // Rota para fazer upload de uma imagem
     app.post("/upload", upload.single("imagem"), uploadImagem);
-    // Rota para atualizar informações textuais de um post
-    app.put("/posts/:id", atualizarPost);
+    // Rota para atualizar um novo post (post recém-criado)
+    app.put("/upload/:id", atualizarNovoPost);
 }
 
 export default routes;
