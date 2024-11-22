@@ -23,3 +23,12 @@ export async function atualizarPost(idPost, novosDados) {
 
     return colecao.updateOne({ _id: new ObjectId(objectId) }, { $set: novosDados });
 }
+
+// Resposta do exercício proposto pela Luri
+export async function exluirPost(idPost) {
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts");
+    const objectId = ObjectId.createFromHexString(idPost);
+
+    return colecao.deleteOne({ _id: new ObjectId(objectId) });
+}
