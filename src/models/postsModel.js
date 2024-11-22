@@ -1,3 +1,4 @@
+import "dotenv/config"; // Permite que as variáveis sejam acessadas na
 import conectarAoBanco from "../config/dbConfig.js";
 import { ObjectId } from "mongodb";
 
